@@ -35,6 +35,9 @@ public class TheStack : MonoBehaviour
             return;
         }
 
+        prevColor = GetRandomColor();
+        nextColor = GetRandomColor();
+
         prevBlockPosition = Vector3.down;
         Spawn_Block();
     }
@@ -45,9 +48,6 @@ public class TheStack : MonoBehaviour
         {
             Spawn_Block();
         }
-
-        prevColor = GetRandomColor();
-        nextColor = GetRandomColor();
 
         transform.position = Vector3.Lerp(transform.position, desiredPosition, StackMovingSpeed * Time.deltaTime);
     }
